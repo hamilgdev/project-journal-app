@@ -1,5 +1,13 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  getDocs,
+  doc,
+} from "firebase/firestore";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -28,6 +36,12 @@ const googleAuthProvider = new GoogleAuthProvider();
 
 export {
   db,
+  doc,
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  updateDoc,
   auth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,

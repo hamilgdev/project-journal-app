@@ -1,14 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import JournalEntry from "./JournalEntry";
 
 const JournalEntries = () => {
-  const entries = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const { notes } = useSelector((state) => state.notes);
 
   return (
     <div className="flex flex-col gap-2">
-      {entries.map((entry, index) => (
-        <JournalEntry key={index} {...entry} />
+      {notes.map((note) => (
+        <JournalEntry key={note.id} {...note} />
       ))}
     </div>
   );

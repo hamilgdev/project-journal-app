@@ -9,6 +9,7 @@ import {
 } from "../../firebase/fireBaseConfig";
 
 import { SET_AUTH_LOGIN, SET_AUTH_LOGOUT } from "../types/authType";
+import { logoutCleanNote } from "./notesAction";
 import { finishLoading, startLoading } from "./uiAction";
 
 /**
@@ -68,6 +69,7 @@ export const endSingLogout = () => {
       .then(() => {
         console.log("Sign-out successful!");
         dispatch(setLogout());
+        dispatch(logoutCleanNote());
       })
       .catch(console.warn);
   };
